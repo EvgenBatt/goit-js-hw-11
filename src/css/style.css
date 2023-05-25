@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-image: radial-gradient(
+    circle,
+    rgba(71, 89, 184, 1) 50%,
+    rgba(140, 65, 164, 1) 100%
+  );
+}
+
+input {
+  width: 250px;
+  height: 25px;
+  border: none;
+  border-radius: 2px;
+  padding: 0 10px 0 10px;
+}
+
+button {
+  height: 25px;
+  border: none;
+  border-radius: 2px;
+  padding: 0 5px 0 5px;
+}
