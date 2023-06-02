@@ -1,5 +1,6 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
 body {
-  margin: 0;
   padding: 0;
 }
 
@@ -7,8 +8,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-image: radial-gradient(
     circle,
     rgba(71, 89, 184, 1) 50%,
@@ -29,4 +30,49 @@ button {
   border: none;
   border-radius: 2px;
   padding: 0 5px 0 5px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 15px;
+}
+
+.photo-card {
+  border-radius: 10px;
+  flex-basis: calc((100% - 60px) / 4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.248);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.photo-card:is(:hover, :focus) {
+  box-shadow: 13px 14px 17px -17px rgba(0, 0, 0, 0.89);
+  border: 1px solid rgba(0, 0, 0, 0.096);
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  color: #151427;
 }
