@@ -78,7 +78,8 @@ function handlerPagination(entries) {
       fetchImages();
     } else if (
       entry.isIntersecting &&
-      pixabayImages.page * pixabayImages.perPage >= pixabayImages.totalHits
+      pixabayImages.page * pixabayImages.perPage >= pixabayImages.totalHits &&
+      pixabayImages.totalHits > 0
     ) {
       Notiflix.Notify.info(
         "We're sorry, but you've reached the end of search results."
