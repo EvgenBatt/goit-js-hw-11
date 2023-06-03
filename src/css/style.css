@@ -8,13 +8,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   background-image: radial-gradient(
     circle,
     rgba(71, 89, 184, 1) 50%,
     rgba(140, 65, 164, 1) 100%
   );
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
 }
 
 input {
@@ -43,6 +48,7 @@ img {
   flex-wrap: wrap;
   gap: 20px;
   padding: 15px;
+  margin-top: 65px;
 }
 
 .photo-card {

@@ -27,6 +27,12 @@ async function addImages(images) {
 
   await pixabayImages.getImages();
   Notiflix.Notify.info(`Hooray! We found ${pixabayImages.totalHits} images.`);
+
+  if (pixabayImages.page * pixabayImages.perPage >= pixabayImages.totalHits) {
+    Notiflix.Notify.info(
+      "We're sorry, but you've reached the end of search results."
+    );
+  }
 }
 
 refs.searchForm.addEventListener('submit', handleSubmit);
@@ -68,7 +74,15 @@ function handlerPagination(entries) {
       entry.isIntersecting &&
       pixabayImages.page * pixabayImages.perPage < pixabayImages.totalHits
     ) {
+      pixabayImages.page += 1;
       fetchImages();
+    } else if (
+      entry.isIntersecting &&
+      pixabayImages.page * pixabayImages.perPage >= pixabayImages.totalHits
+    ) {
+      Notiflix.Notify.info(
+        "We're sorry, but you've reached the end of search results."
+      );
     }
   });
 }
