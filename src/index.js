@@ -76,16 +76,17 @@ function handlerPagination(entries) {
     ) {
       pixabayImages.page += 1;
       fetchImages();
-    } else if (
-      entry.isIntersecting &&
-      pixabayImages.page * pixabayImages.perPage >= pixabayImages.totalHits &&
-      pixabayImages.totalHits > 0
-    ) {
-      Notiflix.Notify.info(
-        "We're sorry, but you've reached the end of search results."
-      );
     }
   });
+
+  if (
+    pixabayImages.page * pixabayImages.perPage >= pixabayImages.totalHits &&
+    pixabayImages.totalHits > 0
+  ) {
+    Notiflix.Notify.info(
+      "We're sorry, but you've reached the end of search results."
+    );
+  }
 }
 
 observer.observe(refs.loadMore);
